@@ -1,8 +1,14 @@
 import React from 'react'
 import './styles.css'
-const ListItem = ({item:{coverSrc , title , price , deliveryFee , rating}}) => (
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import { IconButton } from '@material-ui/core';
+  const ListItem = ({item:{coverSrc , title , price , deliveryFee , rating}}) => (
+
     <div className='listItem-wrap'>
       <img src={coverSrc} alt="item" />
+      <IconButton>
+      <FavoriteIcon style={{color:"grey" , marginTop:"5px"}} />
+      </IconButton>
       <header>
         <h4>{title}</h4>
         <span>⭐{rating}</span>

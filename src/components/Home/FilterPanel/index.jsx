@@ -39,6 +39,12 @@ const FilterPanel = ({ selectedCategory, selectToggle , selectedRating , selectR
           selectToggle={selectRating}
         />
       </div>
+      <div className="input=group">
+        <p className="trending">Trending 🔥</p>
+        <h4>Hawaiian shirt</h4>
+        <h4>NF Black Jacket</h4>
+        <h4>Hawaiian White</h4>
+      </div>
     </div>
   );
 
