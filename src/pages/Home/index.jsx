@@ -69,11 +69,10 @@ const Home = () => {
   },[selectedRating,selectedCategory,brands,selectedPrice,inputSearch])
   return (
     <div className="home">
-      {/*Nav Bar */}
       <NavBar value={inputSearch} changeInput = {event=>setInputSearch(event.target.value)} />
       <div className="home_panelList-wrap">
         <div className="home_panel-wrap">
-          {/*Side Panels */}
+      
           <FilterPanel
             selectToggle={handleSelectCategory}
             selectedCategory={selectedCategory}
@@ -86,7 +85,7 @@ const Home = () => {
           />
         </div>
         <div className="home_list-wrap">
-          {/*List and Empty view */}
+         
           <List list ={list}/>
         </div>
       </div>
