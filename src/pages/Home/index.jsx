@@ -28,14 +28,14 @@ const Home = () => {
       label:'H&M'
     },
   ])
-  const handleSelectCategory = (event,value)=>!value? null : setSelectedCategory(value);
-  const handleSelectRating = (event,value)=>!value? null : setSelectedRating(value);
+  const handleSelectCategory = (_event,value)=>!value? null : setSelectedCategory(value);
+  const handleSelectRating = (_event,value)=>!value? null : setSelectedRating(value);
   const handleChangeChecked = (id) => {
     const brandsStateList  = brands;
     const changeCheckedBrands = brandsStateList.map((item)=>item.id===id?{...item,checked:!item.checked}: item);
     setBrands(changeCheckedBrands);
   };
-  const handleChangePrice=(event,value)=> setSelectedPrice(value);
+  const handleChangePrice=(_event,value)=> setSelectedPrice(value);
   const applyFilters = () => {
     let updatedList = dataList;
     if(selectedRating){
