@@ -6,7 +6,8 @@ import "./styles.css";
 
 const Home = () => {
   const [selectedCategory , setSelectedCategory] = useState(null);
-  const [selectedRating , setSelectedRating] = useState(null);
+   const [selectedRating , setSelectedRating] = useState(null);
+   const [selectedPrice , setSelectedPrice] = useState([500,5000]);
   const [brands , setBrands] = useState([
     {
       id:1,
@@ -31,7 +32,7 @@ const Home = () => {
     const changeCheckedBrands = brandsStateList.map((item)=>item.id===id?{...item,checked:!item.checked}: item);
     setBrands(changeCheckedBrands);
   };
-  
+  const handleChangePrice=(event,value)=> setSelectedPrice(value);
   return (
     <div className="home">
       {/*Nav Bar */}
@@ -46,6 +47,8 @@ const Home = () => {
             selectedRating = {selectedRating}
             brands = {brands}
             changeChecked = {handleChangeChecked}
+            selectedPrice = {selectedPrice}
+            changedPrice = {handleChangePrice}
           />
         </div>
         <div className="home_list-wrap">

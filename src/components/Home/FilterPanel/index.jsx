@@ -3,7 +3,8 @@ import FilterListToggle from "../../common/FilterListToggle";
 import { categoryList , ratingList } from "../../../constants";
 import "./styles.css";
 import CheckboxProton from "../../common/Checkbox";
-const FilterPanel = ({ selectedCategory, selectToggle , selectedRating , selectRating , brands , changeChecked}) =>  (
+import SliderProton from "../../common/Slider";
+const FilterPanel = ({ selectedCategory, selectToggle , selectedRating , selectRating , brands , changeChecked , selectedPrice , changedPrice}) =>  (
     <div>
       {/* Category */}
       <div className="input-group">
@@ -17,12 +18,18 @@ const FilterPanel = ({ selectedCategory, selectToggle , selectedRating , selectR
       </div>
       {/* Brand */}
       <div className = "input-group">
-      <p className="label">Brand</p>
+      <p className="label">Brands</p>
       {brands.map((brand)=>(<CheckboxProton key = {brand.id}
       brand = {brand}
        changeChecked = {changeChecked} />))}
       </div>
       {/* Price */}
+      <div className = "input-group">
+        <p className = "label-range">
+          Price Range
+        </p>
+        <SliderProton value = {selectedPrice} changedPrice = {changedPrice} />
+      </div>
       {/* Ratings */}
       <div className="input-group">
         <p className="label">Star Rating</p>
