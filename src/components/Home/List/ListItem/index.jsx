@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { IconButton } from '@material-ui/core';
-  const ListItem = ({item:{coverSrc , title , price , deliveryFee , rating}}) => (
-
+  const ListItem = ({item:{coverSrc , title , price , deliveryFee , rating}}) => {
+    const [btnColor , setBtnColor] = useState("grey")
+    return (
     <div className='listItem-wrap'>
       <img src={coverSrc} alt="item" />
-      <IconButton>
-      <FavoriteIcon style={{color:"grey" , marginTop:"5px"}} />
+      <IconButton onClick={
+        ()=>{
+          btnColor === "red" ? setBtnColor("grey") : setBtnColor("red");
+        }
+      }>
+      <FavoriteIcon style={{color:btnColor , marginTop:"5px"}} />
       </IconButton>
       <header>
         <h4>{title}</h4>
@@ -20,6 +25,7 @@ import { IconButton } from '@material-ui/core';
         </p>
       </footer>
     </div>
-);
+    )
+  };
 
 export default ListItem
