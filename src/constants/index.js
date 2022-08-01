@@ -72,7 +72,7 @@ export const categoryList = [
     },
     {
       id: 4,
-      title: 'Pink T-shirt',
+      title: 'Pink T-Shirt',
       deliveryFee: 2.14,
       category: 'men',
       brand: 'H&M',
