@@ -66,6 +66,7 @@ const Home = () => {
   };
   useEffect(()=>{
     applyFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[selectedRating,selectedCategory,brands,selectedPrice,inputSearch])
   return (
     <div className="home">
